@@ -1,6 +1,6 @@
 import {
-  Component, Input, Output, EventEmitter, HostListener, DoCheck,
-  ChangeDetectionStrategy, KeyValueDiffer, ChangeDetectorRef, KeyValueDiffers
+  Component, Input, Output, EventEmitter, HostListener, OnChanges,
+  ChangeDetectionStrategy, ChangeDetectorRef, SimpleChanges
 } from '@angular/core';
 import { MouseEvent } from '../../events';
 
@@ -8,7 +8,7 @@ import { MouseEvent } from '../../events';
   selector: 'datatable-row-wrapper',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div 
+    <div
       *ngIf="groupHeader && groupHeader.template"
       class="datatable-group-header"
       [ngStyle]="getGroupHeaderStyle()">
@@ -18,8 +18,8 @@ import { MouseEvent } from '../../events';
         [ngTemplateOutletContext]="groupContext">
       </ng-template>
     </div>
-    <ng-content 
-      *ngIf="(groupHeader && groupHeader.template && expanded) || 
+    <ng-content
+      *ngIf="(groupHeader && groupHeader.template && expanded) ||
              (!groupHeader || !groupHeader.template)">
     </ng-content>
     <div
@@ -37,7 +37,7 @@ import { MouseEvent } from '../../events';
     class: 'datatable-row-wrapper'
   }
 })
-export class DataTableRowWrapperComponent implements DoCheck {
+export class DataTableRowWrapperComponent implements OnChanges {
 
   @Input() innerWidth: number;
   @Input() rowDetail: any;
@@ -45,7 +45,7 @@ export class DataTableRowWrapperComponent implements DoCheck {
   @Input() offsetX: number;
   @Input() detailRowHeight: any;
   @Input() row: any;
-  @Input() groupedRows: any;  
+  @Input() groupedRows: any;
   @Output() rowContextmenu = new EventEmitter<{event: MouseEvent, row: any}>(false);
 
   @Input() set rowIndex(val: number) {
@@ -82,16 +82,14 @@ export class DataTableRowWrapperComponent implements DoCheck {
     rowIndex: this.rowIndex
   };
 
-  private rowDiffer: KeyValueDiffer<{}, {}>;
   private _expanded: boolean = false;
   private _rowIndex: number;
-  
-  constructor(private cd: ChangeDetectorRef, private differs: KeyValueDiffers) {
-    this.rowDiffer = differs.find({}).create();
+
+  constructor(private cd: ChangeDetectorRef) {
   }
 
-  ngDoCheck(): void {
-    if (this.rowDiffer.diff(this.row)) {
+  ngOnChanges({ row: rowChange }: SimpleChanges): void {
+    if (rowChange) {
       this.rowContext.row = this.row;
       this.groupContext.group = this.row;
       this.cd.markForCheck();
@@ -110,6 +108,6 @@ export class DataTableRowWrapperComponent implements DoCheck {
     styles['backface-visibility'] = 'hidden';
     styles['width'] = this.innerWidth;
 
-    return styles; 
+    return styles;
   }
 }
