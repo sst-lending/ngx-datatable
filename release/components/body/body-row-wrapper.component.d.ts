@@ -1,7 +1,6 @@
-import { EventEmitter, DoCheck, ChangeDetectorRef, KeyValueDiffers } from '@angular/core';
-export declare class DataTableRowWrapperComponent implements DoCheck {
+import { EventEmitter, OnChanges, ChangeDetectorRef, SimpleChanges } from '@angular/core';
+export declare class DataTableRowWrapperComponent implements OnChanges {
     private cd;
-    private differs;
     innerWidth: number;
     rowDetail: any;
     groupHeader: any;
@@ -17,11 +16,10 @@ export declare class DataTableRowWrapperComponent implements DoCheck {
     expanded: boolean;
     groupContext: any;
     rowContext: any;
-    private rowDiffer;
     private _expanded;
     private _rowIndex;
-    constructor(cd: ChangeDetectorRef, differs: KeyValueDiffers);
-    ngDoCheck(): void;
+    constructor(cd: ChangeDetectorRef);
+    ngOnChanges({row: rowChange}: SimpleChanges): void;
     onContextmenu($event: MouseEvent): void;
     getGroupHeaderStyle(): any;
 }

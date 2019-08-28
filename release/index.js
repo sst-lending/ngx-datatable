@@ -778,9 +778,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("@angular/core");
 var events_1 = __webpack_require__("./src/events.ts");
 var DataTableRowWrapperComponent = /** @class */ (function () {
-    function DataTableRowWrapperComponent(cd, differs) {
+    function DataTableRowWrapperComponent(cd) {
         this.cd = cd;
-        this.differs = differs;
         this.rowContextmenu = new core_1.EventEmitter(false);
         this.groupContext = {
             group: this.row,
@@ -793,7 +792,6 @@ var DataTableRowWrapperComponent = /** @class */ (function () {
             rowIndex: this.rowIndex
         };
         this._expanded = false;
-        this.rowDiffer = differs.find({}).create();
     }
     Object.defineProperty(DataTableRowWrapperComponent.prototype, "rowIndex", {
         get: function () {
@@ -821,8 +819,9 @@ var DataTableRowWrapperComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    DataTableRowWrapperComponent.prototype.ngDoCheck = function () {
-        if (this.rowDiffer.diff(this.row)) {
+    DataTableRowWrapperComponent.prototype.ngOnChanges = function (_a) {
+        var rowChange = _a.row;
+        if (rowChange) {
             this.rowContext.row = this.row;
             this.groupContext.group = this.row;
             this.cd.markForCheck();
@@ -890,12 +889,12 @@ var DataTableRowWrapperComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'datatable-row-wrapper',
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-            template: "\n    <div \n      *ngIf=\"groupHeader && groupHeader.template\"\n      class=\"datatable-group-header\"\n      [ngStyle]=\"getGroupHeaderStyle()\">\n      <ng-template\n        *ngIf=\"groupHeader && groupHeader.template\"\n        [ngTemplateOutlet]=\"groupHeader.template\"\n        [ngTemplateOutletContext]=\"groupContext\">\n      </ng-template>\n    </div>\n    <ng-content \n      *ngIf=\"(groupHeader && groupHeader.template && expanded) || \n             (!groupHeader || !groupHeader.template)\">\n    </ng-content>\n    <div\n      *ngIf=\"rowDetail && rowDetail.template && expanded\"\n      [style.height.px]=\"detailRowHeight\"\n      class=\"datatable-row-detail\">\n      <ng-template\n        *ngIf=\"rowDetail && rowDetail.template\"\n        [ngTemplateOutlet]=\"rowDetail.template\"\n        [ngTemplateOutletContext]=\"rowContext\">\n      </ng-template>\n    </div>\n  ",
+            template: "\n    <div\n      *ngIf=\"groupHeader && groupHeader.template\"\n      class=\"datatable-group-header\"\n      [ngStyle]=\"getGroupHeaderStyle()\">\n      <ng-template\n        *ngIf=\"groupHeader && groupHeader.template\"\n        [ngTemplateOutlet]=\"groupHeader.template\"\n        [ngTemplateOutletContext]=\"groupContext\">\n      </ng-template>\n    </div>\n    <ng-content\n      *ngIf=\"(groupHeader && groupHeader.template && expanded) ||\n             (!groupHeader || !groupHeader.template)\">\n    </ng-content>\n    <div\n      *ngIf=\"rowDetail && rowDetail.template && expanded\"\n      [style.height.px]=\"detailRowHeight\"\n      class=\"datatable-row-detail\">\n      <ng-template\n        *ngIf=\"rowDetail && rowDetail.template\"\n        [ngTemplateOutlet]=\"rowDetail.template\"\n        [ngTemplateOutletContext]=\"rowContext\">\n      </ng-template>\n    </div>\n  ",
             host: {
                 class: 'datatable-row-wrapper'
             }
         }),
-        __metadata("design:paramtypes", [core_1.ChangeDetectorRef, core_1.KeyValueDiffers])
+        __metadata("design:paramtypes", [core_1.ChangeDetectorRef])
     ], DataTableRowWrapperComponent);
     return DataTableRowWrapperComponent;
 }());
