@@ -1,0 +1,68 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/*
+ * Public API Surface of ngx-datatable
+ */
+// components
+export { NgxDatatableModule } from './lib/ngx-datatable.module';
+export { DatatableComponent } from './lib/components/datatable.component';
+export { DataTableHeaderComponent } from './lib/components/header/header.component';
+export { DataTableHeaderCellComponent } from './lib/components/header/header-cell.component';
+export { DataTableBodyComponent } from './lib/components/body/body.component';
+export { DataTableBodyCellComponent } from './lib/components/body/body-cell.component';
+export { DataTableBodyRowComponent } from './lib/components/body/body-row.component';
+export { ProgressBarComponent } from './lib/components/body/progress-bar.component';
+export { ScrollerComponent } from './lib/components/body/scroller.component';
+export { DataTableRowWrapperComponent } from './lib/components/body/body-row-wrapper.component';
+export { DataTableSelectionComponent } from './lib/components/body/selection.component';
+export { DatatableGroupHeaderDirective } from './lib/components/body/body-group-header.directive';
+export { DatatableGroupHeaderTemplateDirective } from './lib/components/body/body-group-header-template.directive';
+export { DataTableSummaryRowComponent } from './lib/components/body/summary/summary-row.component';
+export { DataTableFooterComponent } from './lib/components/footer/footer.component';
+export { DataTablePagerComponent } from './lib/components/footer/pager.component';
+export { DatatableFooterDirective } from './lib/components/footer/footer.directive';
+export { DataTableFooterTemplateDirective } from './lib/components/footer/footer-template.directive';
+export { DataTableColumnDirective } from './lib/components/columns/column.directive';
+export { DataTableColumnHeaderDirective } from './lib/components/columns/column-header.directive';
+export { DataTableColumnCellDirective } from './lib/components/columns/column-cell.directive';
+export { DataTableColumnCellTreeToggle } from './lib/components/columns/tree.directive';
+export { DatatableRowDetailDirective } from './lib/components/row-detail/row-detail.directive';
+export { DatatableRowDetailTemplateDirective } from './lib/components/row-detail/row-detail-template.directive';
+// directives
+export { DraggableDirective } from './lib/directives/draggable.directive';
+export { LongPressDirective } from './lib/directives/long-press.directive';
+export { OrderableDirective } from './lib/directives/orderable.directive';
+export { ResizeableDirective } from './lib/directives/resizeable.directive';
+export { VisibilityDirective } from './lib/directives/visibility.directive';
+// services
+export { ScrollbarHelper } from './lib/services/scrollbar-helper.service';
+export { DimensionsHelper } from './lib/services/dimensions-helper.service';
+export { ColumnChangesService } from './lib/services/column-changes.service';
+// types
+export { ColumnMode } from './lib/types/column-mode.type';
+export { SortType } from './lib/types/sort.type';
+export { SortDirection } from './lib/types/sort-direction.type';
+export { SelectionType } from './lib/types/selection.type';
+export { ClickType } from './lib/types/click.type';
+export {} from './lib/types/table-column.type';
+export {} from './lib/types/sort-prop-dir.type';
+export { ContextmenuType } from './lib/types/contextmenu.type';
+// utils
+export { id } from './lib/utils/id';
+export { columnsByPin, columnGroupWidths, columnTotalWidth, columnsTotalWidth, columnsByPinArr } from './lib/utils/column';
+export { emptyStringGetter, getterForProp, numericIndexGetter, shallowValueGetter, deepValueGetter } from './lib/utils/column-prop-getters';
+export { camelCase, deCamelCase } from './lib/utils/camel-case';
+export { Keys } from './lib/utils/keys';
+export { getTotalFlexGrow, adjustColumnWidths, forceFillColumnWidths } from './lib/utils/math';
+export { getVendorPrefixedName } from './lib/utils/prefixes';
+export { selectRows, selectRowsBetween } from './lib/utils/selection';
+export { translateXY } from './lib/utils/translate';
+export { throttle, throttleable } from './lib/utils/throttle';
+export { nextSortDir, orderByComparator, sortRows } from './lib/utils/sort';
+export { RowHeightCache } from './lib/utils/row-height-cache';
+export { setColumnDefaults, isNullOrUndefined, translateTemplates } from './lib/utils/column-helper';
+export { elementsFromPoint } from './lib/utils/elm-from-point';
+export { optionalGetterForProp, groupRowsByParents } from './lib/utils/tree';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0Bzd2ltbGFuZS9uZ3gtZGF0YXRhYmxlLyIsInNvdXJjZXMiOlsicHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUtBLG1DQUFjLDRCQUE0QixDQUFDO0FBQzNDLG1DQUFjLHNDQUFzQyxDQUFDO0FBQ3JELHlDQUFjLDBDQUEwQyxDQUFDO0FBQ3pELDZDQUFjLCtDQUErQyxDQUFDO0FBQzlELHVDQUFjLHNDQUFzQyxDQUFDO0FBQ3JELDJDQUFjLDJDQUEyQyxDQUFDO0FBQzFELDBDQUFjLDBDQUEwQyxDQUFDO0FBQ3pELHFDQUFjLDhDQUE4QyxDQUFDO0FBQzdELGtDQUFjLDBDQUEwQyxDQUFDO0FBQ3pELDZDQUFjLGtEQUFrRCxDQUFDO0FBQ2pFLDRDQUFjLDJDQUEyQyxDQUFDO0FBQzFELDhDQUFjLG1EQUFtRCxDQUFDO0FBQ2xFLHNEQUFjLDREQUE0RCxDQUFDO0FBQzNFLDZDQUFjLHFEQUFxRCxDQUFDO0FBQ3BFLHlDQUFjLDBDQUEwQyxDQUFDO0FBQ3pELHdDQUFjLHlDQUF5QyxDQUFDO0FBQ3hELHlDQUFjLDBDQUEwQyxDQUFDO0FBQ3pELGlEQUFjLG1EQUFtRCxDQUFDO0FBQ2xFLHlDQUFjLDJDQUEyQyxDQUFDO0FBQzFELCtDQUFjLGtEQUFrRCxDQUFDO0FBQ2pFLDZDQUFjLGdEQUFnRCxDQUFDO0FBQy9ELDhDQUFjLHlDQUF5QyxDQUFDO0FBQ3hELDRDQUFjLGtEQUFrRCxDQUFDO0FBQ2pFLG9EQUFjLDJEQUEyRCxDQUFDOztBQUcxRSxtQ0FBYyxzQ0FBc0MsQ0FBQztBQUNyRCxtQ0FBYyx1Q0FBdUMsQ0FBQztBQUN0RCxtQ0FBYyxzQ0FBc0MsQ0FBQztBQUNyRCxvQ0FBYyx1Q0FBdUMsQ0FBQztBQUN0RCxvQ0FBYyx1Q0FBdUMsQ0FBQzs7QUFHdEQsZ0NBQWMseUNBQXlDLENBQUM7QUFDeEQsaUNBQWMsMENBQTBDLENBQUM7QUFDekQscUNBQWMsdUNBQXVDLENBQUM7O0FBR3RELDJCQUFjLDhCQUE4QixDQUFDO0FBQzdDLHlCQUFjLHVCQUF1QixDQUFDO0FBQ3RDLDhCQUFjLGlDQUFpQyxDQUFDO0FBQ2hELDhCQUFjLDRCQUE0QixDQUFDO0FBQzNDLDBCQUFjLHdCQUF3QixDQUFDO0FBQ3ZDLGVBQWMsK0JBQStCLENBQUM7QUFDOUMsZUFBYyxnQ0FBZ0MsQ0FBQztBQUMvQyxnQ0FBYyw4QkFBOEIsQ0FBQzs7QUFHN0MsbUJBQWMsZ0JBQWdCLENBQUM7QUFDL0Isc0dBQWMsb0JBQW9CLENBQUM7QUFDbkMsMEdBQWMsaUNBQWlDLENBQUM7QUFDaEQsdUNBQWMsd0JBQXdCLENBQUM7QUFDdkMscUJBQWMsa0JBQWtCLENBQUM7QUFDakMsNEVBQWMsa0JBQWtCLENBQUM7QUFDakMsc0NBQWMsc0JBQXNCLENBQUM7QUFDckMsOENBQWMsdUJBQXVCLENBQUM7QUFDdEMsNEJBQWMsdUJBQXVCLENBQUM7QUFDdEMsdUNBQWMsc0JBQXNCLENBQUM7QUFDckMseURBQWMsa0JBQWtCLENBQUM7QUFDakMsK0JBQWMsOEJBQThCLENBQUM7QUFDN0MseUVBQWMsMkJBQTJCLENBQUM7QUFDMUMsa0NBQWMsNEJBQTRCLENBQUM7QUFDM0MsMERBQWMsa0JBQWtCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxyXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2Ygbmd4LWRhdGF0YWJsZVxyXG4gKi9cclxuXHJcbi8vIGNvbXBvbmVudHNcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvbmd4LWRhdGF0YWJsZS5tb2R1bGUnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9jb21wb25lbnRzL2RhdGF0YWJsZS5jb21wb25lbnQnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50JztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLWNlbGwuY29tcG9uZW50JztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvY29tcG9uZW50cy9ib2R5L2JvZHkuY29tcG9uZW50JztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvY29tcG9uZW50cy9ib2R5L2JvZHktY2VsbC5jb21wb25lbnQnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9jb21wb25lbnRzL2JvZHkvYm9keS1yb3cuY29tcG9uZW50JztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvY29tcG9uZW50cy9ib2R5L3Byb2dyZXNzLWJhci5jb21wb25lbnQnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9jb21wb25lbnRzL2JvZHkvc2Nyb2xsZXIuY29tcG9uZW50JztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvY29tcG9uZW50cy9ib2R5L2JvZHktcm93LXdyYXBwZXIuY29tcG9uZW50JztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvY29tcG9uZW50cy9ib2R5L3NlbGVjdGlvbi5jb21wb25lbnQnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9jb21wb25lbnRzL2JvZHkvYm9keS1ncm91cC1oZWFkZXIuZGlyZWN0aXZlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvY29tcG9uZW50cy9ib2R5L2JvZHktZ3JvdXAtaGVhZGVyLXRlbXBsYXRlLmRpcmVjdGl2ZSc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL2NvbXBvbmVudHMvYm9keS9zdW1tYXJ5L3N1bW1hcnktcm93LmNvbXBvbmVudCc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL2NvbXBvbmVudHMvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9jb21wb25lbnRzL2Zvb3Rlci9wYWdlci5jb21wb25lbnQnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9jb21wb25lbnRzL2Zvb3Rlci9mb290ZXIuZGlyZWN0aXZlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLXRlbXBsYXRlLmRpcmVjdGl2ZSc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL2NvbXBvbmVudHMvY29sdW1ucy9jb2x1bW4uZGlyZWN0aXZlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvY29tcG9uZW50cy9jb2x1bW5zL2NvbHVtbi1oZWFkZXIuZGlyZWN0aXZlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvY29tcG9uZW50cy9jb2x1bW5zL2NvbHVtbi1jZWxsLmRpcmVjdGl2ZSc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL2NvbXBvbmVudHMvY29sdW1ucy90cmVlLmRpcmVjdGl2ZSc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL2NvbXBvbmVudHMvcm93LWRldGFpbC9yb3ctZGV0YWlsLmRpcmVjdGl2ZSc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL2NvbXBvbmVudHMvcm93LWRldGFpbC9yb3ctZGV0YWlsLXRlbXBsYXRlLmRpcmVjdGl2ZSc7XHJcblxyXG4vLyBkaXJlY3RpdmVzXHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL2RpcmVjdGl2ZXMvZHJhZ2dhYmxlLmRpcmVjdGl2ZSc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL2RpcmVjdGl2ZXMvbG9uZy1wcmVzcy5kaXJlY3RpdmUnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9kaXJlY3RpdmVzL29yZGVyYWJsZS5kaXJlY3RpdmUnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9kaXJlY3RpdmVzL3Jlc2l6ZWFibGUuZGlyZWN0aXZlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvZGlyZWN0aXZlcy92aXNpYmlsaXR5LmRpcmVjdGl2ZSc7XHJcblxyXG4vLyBzZXJ2aWNlc1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9zZXJ2aWNlcy9zY3JvbGxiYXItaGVscGVyLnNlcnZpY2UnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9zZXJ2aWNlcy9kaW1lbnNpb25zLWhlbHBlci5zZXJ2aWNlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvc2VydmljZXMvY29sdW1uLWNoYW5nZXMuc2VydmljZSc7XHJcblxyXG4vLyB0eXBlc1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi90eXBlcy9jb2x1bW4tbW9kZS50eXBlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvdHlwZXMvc29ydC50eXBlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvdHlwZXMvc29ydC1kaXJlY3Rpb24udHlwZSc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL3R5cGVzL3NlbGVjdGlvbi50eXBlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvdHlwZXMvY2xpY2sudHlwZSc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL3R5cGVzL3RhYmxlLWNvbHVtbi50eXBlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvdHlwZXMvc29ydC1wcm9wLWRpci50eXBlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvdHlwZXMvY29udGV4dG1lbnUudHlwZSc7XHJcblxyXG4vLyB1dGlsc1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi91dGlscy9pZCc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL3V0aWxzL2NvbHVtbic7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL3V0aWxzL2NvbHVtbi1wcm9wLWdldHRlcnMnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi91dGlscy9jYW1lbC1jYXNlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvdXRpbHMva2V5cyc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL3V0aWxzL21hdGgnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi91dGlscy9wcmVmaXhlcyc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL3V0aWxzL3NlbGVjdGlvbic7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL3V0aWxzL3RyYW5zbGF0ZSc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL3V0aWxzL3Rocm90dGxlJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvdXRpbHMvc29ydCc7XHJcbmV4cG9ydCAqIGZyb20gJy4vbGliL3V0aWxzL3Jvdy1oZWlnaHQtY2FjaGUnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi91dGlscy9jb2x1bW4taGVscGVyJztcclxuZXhwb3J0ICogZnJvbSAnLi9saWIvdXRpbHMvZWxtLWZyb20tcG9pbnQnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi91dGlscy90cmVlJztcclxuIl19
